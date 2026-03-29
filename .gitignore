@@ -1,5 +1,7 @@
 .env
 .env.*
+.adk/
+.venv/
 node_modules/
 dist/
 build/
