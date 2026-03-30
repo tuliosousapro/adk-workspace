@@ -1,100 +1,19 @@
 # Develop Agents with Agent Development Kit (ADK)
 
-Author: Google
-URL: https://www.skills.google/paths/3545?hl=pt-br
-Created at: February 25, 2026 17:00
-Status: Learned
-Status 1: Completed
-Start Date: 25/02/2026
-End Date: 26/03/2026
-Rating: ⭐⭐⭐⭐⭐
-Discipline: AI (https://www.notion.so/AI-2686fd7ad8f5809ba6a4f8d1955f80e3?pvs=21)
-Knowledge Area: AI Agents
-Format: Skills Track / Roadmap
+#### Author: Google
 
-Notes
+#### URL: <https://www.skills.google/paths/3545>
 
-		
+#### Rating: ⭐⭐⭐⭐⭐
+
+### Notes
 
 ## Read the PDF in Notion
 
-Include the PDF file in the field below to read it.
+### References
 
-[https://www.notion.so](https://www.notion.so)
-
-<aside>
-<img src="https://www.notion.so/icons/info-alternate_gray.svg" alt="https://www.notion.so/icons/info-alternate_gray.svg" width="40px" /> References
-
-- [**Agent Development Kit (ADK) — A2A Agent Development and Testing**](https://www.notion.so/Agent-Development-Kit-ADK-A2A-Agent-Development-and-Testing-2bf6fd7ad8f580f99d7dfcfba1746f8b?pvs=21)
-- https://google.github.io/adk-docs/
-- https://docs.astral.sh/uv/
-</aside>
-
-<aside>
-<img src="https://www.notion.so/icons/light-bulb_gray.svg" alt="https://www.notion.so/icons/light-bulb_gray.svg" width="40px" /> Key Insights
-
-- 
-- 
-- 
-</aside>
-
-<aside>
-
-Q u o t e s
-
----
-
-<aside>
-
-</aside>
-
----
-
-[Untitled](Sem%20t%C3%ADtulo%203126fd7ad8f581f0b06adeb1519fda79.csv)
-
-</aside>
-
-<aside>
-<img src="notion://custom_emoji/41213bea-dab2-4c83-b483-247619720437/19306d6b-0a1c-80f1-b3d2-007aef1e16f4" alt="notion://custom_emoji/41213bea-dab2-4c83-b483-247619720437/19306d6b-0a1c-80f1-b3d2-007aef1e16f4" width="40px" />
-
-N o t e s
-
----
-
-<aside>
-
-</aside>
-
----
-
-[Untitled](Sem%20t%C3%ADtulo%203126fd7ad8f5816b938ad6f48403020a.csv)
-
-</aside>
-
-<aside>
-<img src="https://www.notion.so/icons/checklist_gray.svg" alt="https://www.notion.so/icons/checklist_gray.svg" width="40px" />
-
-T a s k s
-
-<aside>
-🔹 To add a new task, just click the blue `New` button in the top right corner of the table below.
-
-</aside>
-
----
-
-[Untitled](Sem%20t%C3%ADtulo%203126fd7ad8f581eb9330c3b734fa9c6d.csv)
-
-</aside>
-
-<aside>
-<img src="archive-02-stroke-rounded.svg" alt="archive-02-stroke-rounded.svg" width="40px" /> E x t r a   M a t e r i a l s
-
----
-
-[Untitled](Sem%20t%C3%ADtulo%203126fd7ad8f581aca1afc4e81debd83a.csv)
-
-</aside>
+- <https://google.github.io/adk-docs/>
+- <https://docs.astral.sh/uv/>
 
 # [Build Agents with Agent Development Kit (ADK)](https://www.skills.google/paths/3545/course_templates/1585)
 
@@ -143,13 +62,13 @@ To exite `.venv`just type `deactivate`
 3. Description
     1. This description is primarily used by other LLM agents to determine if they should route a task to this agent. Make it specific enough to differentiate it from peers.
     - Good descriptions:
-        
+
         ✅ “Handles customer billing inquiries and processes payment updates”
         ✅ “Analyzes sales data and generates weekly performance reports”
         ✅ “Helps students learn algebra by guiding them through problem-solving steps”
         ❌ “Billing agent” (too vague)
         ❌ “Helper” (not specific enough)
-        
+
 4. Instruction (optional)
     - Tips for effective instructions (from ADK docs):
         1. Be clear and specific: avoid ambiguity, clearly
@@ -173,7 +92,7 @@ eg. `root_agent = my_specialized_agent`
 
 `adk api_server` runs your agent as a REST API service, allowing other applications to send requests to your agent over HTTP.
 
-### Summary:
+### Summary
 
 - Developing? Use `adk web`
 - Quick test? Use `adk run`
@@ -198,11 +117,10 @@ Choose the right tool:
 `adk create --type=config my_agent`
 
 1. Create the agent project
-    
+
     `adk create --type=config my_config_agent`
-    
+
     the `--type=config`flag tells the ADK this is a YAML based agent
-    
 
 Understanding YAML syntax:
 The vertical bar | after `instruction:` tells YAML everything that follows is multi-line text.
@@ -264,7 +182,7 @@ How all five patterns work together to create predictable, professional behavior
 
 The instruction parameter is arguably the most critical for shaping agent behavior
 
-#### Five reusable patterns create professional instructions:
+#### Five reusable patterns create professional instructions
 
 - Identity - Who the agent is [Name], [Role], [Expertise]
 - Mission - What the agent does
@@ -313,11 +231,11 @@ If the provided data is invalid and cannot be coerced, Pydantic raises a . [[2](
 No temperature configured - defaults to 1.0 (high creativity/randomness) *For factual tasks, we want temperature near 0!*
 
 - Low temperature (0.0 - 0.3) - Deterministic
-    - Use for: Facts, data extraction, analysis, consistency
+  - Use for: Facts, data extraction, analysis, consistency
 - Medium temperature (0.4-0.7) - balanced
-    - Use for: customer support, tutoring, general conversation
+  - Use for: customer support, tutoring, general conversation
 - High temperature (0.8-1.0) - creative
-    - Use for: creative writing, brainstorming, marketing copy
+  - Use for: creative writing, brainstorming, marketing copy
 
 Safety thresholds:
 
@@ -325,15 +243,15 @@ Safety thresholds:
 for production)
 - `BLOCK_ONLY_HIGH` Block only high-probability
 harmful content
-    - Research internal tools
+  - Research internal tools
 - `BLOCK_ONLY_MEDIUM_AND_ABOVE`Block medium
 and high probability
-    - Business, general use
+  - Business, general use
 - `BLOCK_ONLY_LOW_AND_ABOVE`Most strict, blocks
 even low probability
-    - Children, public-facing
+  - Children, public-facing
 
-### Parameters explained:
+### Parameters explained
 
 - `max_output_tokens`: Maximum response length (default varies by model)
 - `top_p`: Nucleus sampling—consider tokens comprising top P% of probability
@@ -421,11 +339,11 @@ Slides includes code patterns references.
 
 [T-DEVAGENTTOOL-B-m1-l1-en-file-2.en.pdf](T-DEVAGENTTOOL-B-m1-l1-en-file-2.en.pdf)
 
-### Agents use tools through five steps:
+### Agents use tools through five steps
 
 Reasoning → Selection → Invocation → Observation → finalization
 
-#### Three main tool types:
+#### Three main tool types
 
 - Built-in tools (ready-to-use)
 - function tools (custom)
@@ -464,7 +382,7 @@ style H fill:#f0f0f0
 ### IMPORTANT: Search suggestions policy
 
 > If your response includes search suggestions (in `renderedContent`), you MUST display them in your application UI. This is a mandatory policy requirement.
-> 
+>
 - When using Google Search grounding you need to display search suggestions (`renderedContent`) in your application UI.
 - Only one built-in tool can be used per root agent, with no other tools allowed in the same agent
 - Built-in tools are production-ready, maintained by ADK, and optimized for LLM interaction
@@ -485,25 +403,25 @@ style C fill:#eeffee
 
 Best practice: Always use `tool_filter` in production to expose only the tools your agent needs.
 
-## What MCP is and why it matters:
+## What MCP is and why it matters
 
 - Open standard for connecting AI agents to external tool servers
 - Universal interoperability: Works across AI frameworks (ADK, Claude, GPT)
 - Industry adoption: Anthropic, OpenAI, Google, and The Linux Foundation
 - Ecosystem access: Hundreds of pre-built tools for common tasks
 
-### Connection types:
+### Connection types
 
 - `StdioConnectionParams` - Local servers via subprocess (development)
 - `SseConnectionParams` - Remote servers via HTTP (production)
 
-### Using MCP in ADK:
+### Using MCP in ADK
 
 - `McpToolset` connects your agent to MCP servers
 - Tools are discovered automatically - no manual registration
 - Use like any other tool - same patterns from Module 1 apply
 
-### Security with tool filtering:
+### Security with tool filtering
 
 - Use `tool_filter` to expose only needed tools
 - Limit to read-only when possible for safety
@@ -534,9 +452,9 @@ Note over Agent,Tool: LLM decides WHEN to call<br/>Tool executes WHAT to do
 
 #### 1. Function signatures matter
 
-1. Function name (Descriptive) - The LLM uses the function name to understand what the tool does. 
+1. Function name (Descriptive) - The LLM uses the function name to understand what the tool does.
     1. Use verb-noun pattern (get_, calculate_, search_*)
-    
+
     ```python
     #  Good: Descriptive, verb-noun pattern
     def get_shipping_cost(weight: float, destination: str) -> dict:
@@ -547,8 +465,8 @@ Note over Agent,Tool: LLM decides WHEN to call<br/>Tool executes WHAT to do
     def process(data: float) -> dict:  # Process what?
     pass
     ```
-    
-2. Type Hints (Required) - Type hints tell ADK what types the LLM should provide 
+
+2. Type Hints (Required) - Type hints tell ADK what types the LLM should provide
     1. ADK uses these to generate schema for the LLM
 
 ```python
@@ -690,7 +608,7 @@ return {"status": "error", "error_message": "Clear explanation"}
 return {"status": "success", "result_key": computed_value}
 ```
 
-#### Multiple Tools:
+#### Multiple Tools
 
 - **List all functions:** tools=[tool1, tool2, tool3]
 - **Agent selects automatically:** Based on context and docstrings
@@ -701,7 +619,7 @@ return {"status": "success", "result_key": computed_value}
 
 [T-DEVAGENTTOOL-B-m4-l1-en-file-10.en.pdf](T-DEVAGENTTOOL-B-m4-l1-en-file-10.en.pdf)
 
-### How to make good agents instructions.
+### How to make good agents instructions
 
 - **Organized sections:** Tool selection, workflows, error handling
 - **Specific guidance:** When to use each tool
@@ -730,9 +648,9 @@ style K fill:#ccffcc
 style L fill:#ffe6cc
 ```
 
-> **Key principle:** Different error types require different handling strategies. 
+> **Key principle:** Different error types require different handling strategies.
 Specify exactly what the agent should do for each case.
-> 
+>
 
 ```mermaid
 flowchart TD
@@ -764,7 +682,7 @@ style F fill:#ccffcc
 
 Instead of writing a function tool, you can use another specialized agent as a tool. This allows the main agent to delegate complex subtasks to specialized agents.
 
-#### When to use agent-as-tool:
+#### When to use agent-as-tool
 
 - Subtask requires specialized reasoning (not just predefined logic)
 - Different instructions needed for the subtask
@@ -900,23 +818,23 @@ style SS3 fill:#eeffee
 Prefixes on state keys define their scope and persistence behavior, especially with persistent services:
 
 - **No Prefix (Session State):**
-    - **Scope:** Specific to the *current* session (`id`).
-    - **Persistence:** Only persists if the `SessionService` is persistent (`Database`, `VertexAI`).
-    - **Example:** `session.state['current_intent'] = 'book_flight'`
+  - **Scope:** Specific to the *current* session (`id`).
+  - **Persistence:** Only persists if the `SessionService` is persistent (`Database`, `VertexAI`).
+  - **Example:** `session.state['current_intent'] = 'book_flight'`
 - **`user:` Prefix (User State):**
-    - **Scope:** Tied to the `user_id`, shared across *all* sessions for that user (within the same `app_name`).
-    - **Persistence:** Persistent with `Database` or `VertexAI`. (Stored by `InMemory` but lost on restart).
-    - **Example:** `session.state['user:preferred_language'] = 'fr'`
+  - **Scope:** Tied to the `user_id`, shared across *all* sessions for that user (within the same `app_name`).
+  - **Persistence:** Persistent with `Database` or `VertexAI`. (Stored by `InMemory` but lost on restart).
+  - **Example:** `session.state['user:preferred_language'] = 'fr'`
 - **`app:` Prefix (App State):**
-    - **Scope:** Tied to the `app_name`, shared across *all* users and sessions for that application.
-    - **Persistence:** Persistent with `Database` or `VertexAI`. (Stored by `InMemory` but lost on restart).
-    - **Example:** `session.state['app:global_discount_code'] = 'SAVE10'`
+  - **Scope:** Tied to the `app_name`, shared across *all* users and sessions for that application.
+  - **Persistence:** Persistent with `Database` or `VertexAI`. (Stored by `InMemory` but lost on restart).
+  - **Example:** `session.state['app:global_discount_code'] = 'SAVE10'`
 - **`temp:` Prefix (Temporary Invocation State):**
-    - **Scope:** Specific to the current **invocation** (the entire process from an agent receiving user input to generating the final output for that input).
-    - **Persistence:** **Not Persistent.** Discarded after the invocation completes and does not carry over to the next one.
-    - **Use Cases:** Storing intermediate calculations, flags, or data passed between tool calls within a single invocation.
-    - **When Not to Use:** For information that must persist across different invocations, such as user preferences, conversation history summaries, or accumulated data.
-    - **Example:** `session.state['temp:raw_api_response'] = {...}`
+  - **Scope:** Specific to the current **invocation** (the entire process from an agent receiving user input to generating the final output for that input).
+  - **Persistence:** **Not Persistent.** Discarded after the invocation completes and does not carry over to the next one.
+  - **Use Cases:** Storing intermediate calculations, flags, or data passed between tool calls within a single invocation.
+  - **When Not to Use:** For information that must persist across different invocations, such as user preferences, conversation history summaries, or accumulated data.
+  - **Example:** `session.state['temp:raw_api_response'] = {...}`
 
 `output_key`(optional): Provide a string key. If set, the text content of the agent's final response will be automatically saved to the session's state dictionary under this key. This is useful for passing results between agents or steps in a workflow.
 
@@ -952,7 +870,7 @@ style A fill:#e4ffe4
 
 [T-DEVAGENTMEM-B-m4-l0-en-file-7.en.pdf](T-DEVAGENTMEM-B-m4-l0-en-file-7.en.pdf)
 
-### Decision tree for State use:
+### Decision tree for State use
 
 ```mermaid
 flowchart TD
