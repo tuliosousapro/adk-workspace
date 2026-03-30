@@ -1,29 +1,29 @@
 # Develop Agents with Agent Development Kit (ADK)
 
-Autor: Google
+Author: Google
 URL: https://www.skills.google/paths/3545?hl=pt-br
-Criado em: 25 de fevereiro de 2026 17:00
-Status: Aprendido
-Status 1: Concluído
-Data de Início: 25/02/2026
-Data de Término: 26/03/2026
-Avaliação: ⭐⭐⭐⭐⭐
-Disciplina: AI (https://www.notion.so/AI-2686fd7ad8f5809ba6a4f8d1955f80e3?pvs=21)
-Área de Conhecimento: AI Agents
-Formato: Skills Track / Roadmap
+Created at: February 25, 2026 17:00
+Status: Learned
+Status 1: Completed
+Start Date: 25/02/2026
+End Date: 26/03/2026
+Rating: ⭐⭐⭐⭐⭐
+Discipline: AI (https://www.notion.so/AI-2686fd7ad8f5809ba6a4f8d1955f80e3?pvs=21)
+Knowledge Area: AI Agents
+Format: Skills Track / Roadmap
 
-Anotações
+Notes
 
 		
 
-## Leia o PDF no Notion
+## Read the PDF in Notion
 
-Inclua o arquivo PDF no campo abaixo para lê-lo.
+Include the PDF file in the field below to read it.
 
 [https://www.notion.so](https://www.notion.so)
 
 <aside>
-<img src="https://www.notion.so/icons/info-alternate_gray.svg" alt="https://www.notion.so/icons/info-alternate_gray.svg" width="40px" /> Referências
+<img src="https://www.notion.so/icons/info-alternate_gray.svg" alt="https://www.notion.so/icons/info-alternate_gray.svg" width="40px" /> References
 
 - [**Agent Development Kit (ADK) — A2A Agent Development and Testing**](https://www.notion.so/Agent-Development-Kit-ADK-A2A-Agent-Development-and-Testing-2bf6fd7ad8f580f99d7dfcfba1746f8b?pvs=21)
 - https://google.github.io/adk-docs/
@@ -31,7 +31,7 @@ Inclua o arquivo PDF no campo abaixo para lê-lo.
 </aside>
 
 <aside>
-<img src="https://www.notion.so/icons/light-bulb_gray.svg" alt="https://www.notion.so/icons/light-bulb_gray.svg" width="40px" /> Principais Insights
+<img src="https://www.notion.so/icons/light-bulb_gray.svg" alt="https://www.notion.so/icons/light-bulb_gray.svg" width="40px" /> Key Insights
 
 - 
 - 
@@ -40,7 +40,7 @@ Inclua o arquivo PDF no campo abaixo para lê-lo.
 
 <aside>
 
-C i t a ç õ e s
+Q u o t e s
 
 ---
 
@@ -50,14 +50,14 @@ C i t a ç õ e s
 
 ---
 
-[Sem título](Sem%20t%C3%ADtulo%203126fd7ad8f581f0b06adeb1519fda79.csv)
+[Untitled](Sem%20t%C3%ADtulo%203126fd7ad8f581f0b06adeb1519fda79.csv)
 
 </aside>
 
 <aside>
 <img src="notion://custom_emoji/41213bea-dab2-4c83-b483-247619720437/19306d6b-0a1c-80f1-b3d2-007aef1e16f4" alt="notion://custom_emoji/41213bea-dab2-4c83-b483-247619720437/19306d6b-0a1c-80f1-b3d2-007aef1e16f4" width="40px" />
 
-N o t a s
+N o t e s
 
 ---
 
@@ -67,32 +67,32 @@ N o t a s
 
 ---
 
-[Sem título](Sem%20t%C3%ADtulo%203126fd7ad8f5816b938ad6f48403020a.csv)
+[Untitled](Sem%20t%C3%ADtulo%203126fd7ad8f5816b938ad6f48403020a.csv)
 
 </aside>
 
 <aside>
 <img src="https://www.notion.so/icons/checklist_gray.svg" alt="https://www.notion.so/icons/checklist_gray.svg" width="40px" />
 
-T a r e f a s
+T a s k s
 
 <aside>
-🔹 Para adicionar uma nova tarefa, basta clicar no botão azul `Nova` no canto superior direito da tabela abaixo.
+🔹 To add a new task, just click the blue `New` button in the top right corner of the table below.
 
 </aside>
 
 ---
 
-[Sem título](Sem%20t%C3%ADtulo%203126fd7ad8f581eb9330c3b734fa9c6d.csv)
+[Untitled](Sem%20t%C3%ADtulo%203126fd7ad8f581eb9330c3b734fa9c6d.csv)
 
 </aside>
 
 <aside>
-<img src="archive-02-stroke-rounded.svg" alt="archive-02-stroke-rounded.svg" width="40px" /> M a te r i a i s — E x t r a s
+<img src="archive-02-stroke-rounded.svg" alt="archive-02-stroke-rounded.svg" width="40px" /> E x t r a   M a t e r i a l s
 
 ---
 
-[Sem título](Sem%20t%C3%ADtulo%203126fd7ad8f581aca1afc4e81debd83a.csv)
+[Untitled](Sem%20t%C3%ADtulo%203126fd7ad8f581aca1afc4e81debd83a.csv)
 
 </aside>
 
@@ -351,20 +351,20 @@ Complex problems require multiple considerations, trade-off analysis, or sequent
 
 `planner` (optional): Assign a `BasePlanner`instance to enable multi-step reasoning and planning before execution `BuiltInPlanner`: Leverages the model’s built-in planning capabilities (e.g., Gemini's thinking feature)
 
-### Níveis de pensamento (Gemini 3)
+### Thinking levels (Gemini 3)
 
-O parâmetro `thinkingLevel`, recomendado para modelos do Gemini 3 e versões mais recentes, permite controlar o comportamento de raciocínio.
+The `thinkingLevel` parameter, recommended for Gemini 3 models and newer, allows controlling reasoning behavior.
 
-A tabela a seguir detalha as configurações de `thinkingLevel` para cada tipo de modelo:
+The following table details the `thinkingLevel` settings for each model type:
 
-| **Nível de pensamento** | **Gemini 3.1 Pro** | **Gemini 3.1 Flash-Lite** | **Gemini 3 Flash** | **Descrição** |
+| **Thinking level** | **Gemini 3.1 Pro** | **Gemini 3.1 Flash-Lite** | **Gemini 3 Flash** | **Description** |
 | --- | --- | --- | --- | --- |
-| **`minimal`** | **incompatível** | **Aceito** (padrão) | **Compatível** | Corresponde à configuração "sem pensar" para a maioria das consultas. O modelo pode pensar de forma muito minimalista para tarefas de programação complexas. Minimiza a latência para aplicativos de chat ou de alta capacidade de processamento. **`minimal`** não garante que o pensamento esteja desativado. |
-| **`low`** | **Compatível** | **Compatível** | **Compatível** | Minimiza a latência e o custo. Ideal para seguir instruções simples, conversar ou aplicativos de alta capacidade de processamento. |
-| **`medium`** | **Compatível** | **Compatível** | **Compatível** | Pensamento equilibrado para a maioria das tarefas. |
-| **`high`** | **Compatível** (padrão, dinâmico) | **Compatível** (dinâmico) | **Compatível** (padrão, dinâmico) | Maximiza a profundidade do raciocínio. O modelo pode levar muito mais tempo para gerar o primeiro token de saída (sem pensar), mas a saída será mais bem fundamentada. |
+| **`minimal`** | **incompatible** | **Supported** (default) | **Supported** | Corresponds to the 'no thinking' setting for most queries. The model may think very minimally for complex programming tasks. Minimizes latency for chat or high-throughput applications. **`minimal`** does not guarantee that thinking is disabled. |
+| **`low`** | **Supported** | **Supported** | **Supported** | Minimizes latency and cost. Ideal for following simple instructions, chatting, or high-throughput applications. |
+| **`medium`** | **Supported** | **Supported** | **Supported** | Balanced thinking for most tasks. |
+| **`high`** | **Supported** (padrão, dinâmico) | **Supported** (dinâmico) | **Supported** (padrão, dinâmico) | Maximizes reasoning depth. The model may take much longer to generate the first output token (without thinking), but the output will be better reasoned. |
 
-O exemplo a seguir mostra como definir o nível de pensamento.
+The following example shows how to set the thinking level.
 
 [Python](https://ai.google.dev/gemini-api/docs/thinking?hl=pt-br#python)[JavaScript](https://ai.google.dev/gemini-api/docs/thinking?hl=pt-br#javascript)[Go](https://ai.google.dev/gemini-api/docs/thinking?hl=pt-br#go)[REST](https://ai.google.dev/gemini-api/docs/thinking?hl=pt-br#rest)
 
@@ -385,9 +385,9 @@ response = client.models.generate_content(
 print(response.text)
 ```
 
-Não é possível desativar o pensamento do Gemini 3.1 Pro. O Gemini 3 Flash e o Flash-Lite também não oferecem suporte ao desligamento total do raciocínio, mas a configuração `minimal` significa que o modelo provavelmente não vai pensar (embora ainda possa). Se você não especificar um nível de raciocínio, o Gemini vai usar o nível dinâmico padrão dos modelos do Gemini 3, `"high"`.
+It is not possible to disable thinking in Gemini 3.1 Pro. Gemini 3 Flash and Flash-Lite also do not support fully turning off reasoning, but the `minimal` setting means the model likely will not think (although it still might). If you do not specify a reasoning level, Gemini will use the default dynamic level for Gemini 3 models, `"high"`.
 
-Os modelos da série Gemini 2.5 não aceitam `thinkingLevel`. Use `thinkingBudget`.
+Gemini 2.5 series models do not support `thinkingLevel`. Use `thinkingBudget`.
 
 The `thinking_budget`parameter guides the model on the number of thinking tokens to use when generating a response. The `include_thoughts` parameter controls whether the model should include its raw thoughts and internal reasoning process in the response.
 
@@ -881,54 +881,54 @@ style SS2 fill:#e1f5ff
 style SS3 fill:#eeffee
 ```
 
-#### Key Characteristics of `State`[¶](https://google.github.io/adk-docs/sessions/state/#key-characteristics-of-state)
+#### Key Characteristics of `State`[¶](https://google.github.io/adk-docs/sessions/state/#key-characteristics-of-state)
 
 1. **Structure: Serializable Key-Value Pairs**
-    - Data is stored as `key: value`.
-    - **Keys:** Always strings (`str`). Use clear names (e.g., `'departure_city'`, `'user:language_preference'`).
-    - **Values:** Must be **serializable**. This means they can be easily saved and loaded by the `SessionService`. Stick to basic types in the specific languages (Python/Go/Java/TypeScript) like strings, numbers, booleans, and simple lists or dictionaries containing *only* these basic types. (See API documentation for precise details).
-    - **⚠️ Avoid Complex Objects:** **Do not store non-serializable objects** (custom class instances, functions, connections, etc.) directly in the state. Store simple identifiers if needed, and retrieve the complex object elsewhere.
+    - Data is stored as `key: value`.
+    - **Keys:** Always strings (`str`). Use clear names (e.g., `'departure_city'`, `'user:language_preference'`).
+    - **Values:** Must be **serializable**. This means they can be easily saved and loaded by the `SessionService`. Stick to basic types in the specific languages (Python/Go/Java/TypeScript) like strings, numbers, booleans, and simple lists or dictionaries containing *only* these basic types. (See API documentation for precise details).
+    - **⚠️ Avoid Complex Objects:** **Do not store non-serializable objects** (custom class instances, functions, connections, etc.) directly in the state. Store simple identifiers if needed, and retrieve the complex object elsewhere.
 2. **Mutability: It Changes**
-    - The contents of the `state` are expected to change as the conversation evolves.
-3. **Persistence: Depends on `SessionService`**
+    - The contents of the `state` are expected to change as the conversation evolves.
+3. **Persistence: Depends on `SessionService`**
     - Whether state survives application restarts depends on your chosen service:
-    - `InMemorySessionService`: **Not Persistent.** State is lost on restart.
-    - `DatabaseSessionService` / `VertexAiSessionService`: **Persistent.** State is saved reliably.
+    - `InMemorySessionService`: **Not Persistent.** State is lost on restart.
+    - `DatabaseSessionService` / `VertexAiSessionService`: **Persistent.** State is saved reliably.
 
 #### Organizing State with Prefixes: Scope Matters[¶](https://google.github.io/adk-docs/sessions/state/#organizing-state-with-prefixes-scope-matters)
 
 Prefixes on state keys define their scope and persistence behavior, especially with persistent services:
 
 - **No Prefix (Session State):**
-    - **Scope:** Specific to the *current* session (`id`).
-    - **Persistence:** Only persists if the `SessionService` is persistent (`Database`, `VertexAI`).
-    - **Example:** `session.state['current_intent'] = 'book_flight'`
-- **`user:` Prefix (User State):**
-    - **Scope:** Tied to the `user_id`, shared across *all* sessions for that user (within the same `app_name`).
-    - **Persistence:** Persistent with `Database` or `VertexAI`. (Stored by `InMemory` but lost on restart).
-    - **Example:** `session.state['user:preferred_language'] = 'fr'`
-- **`app:` Prefix (App State):**
-    - **Scope:** Tied to the `app_name`, shared across *all* users and sessions for that application.
-    - **Persistence:** Persistent with `Database` or `VertexAI`. (Stored by `InMemory` but lost on restart).
-    - **Example:** `session.state['app:global_discount_code'] = 'SAVE10'`
-- **`temp:` Prefix (Temporary Invocation State):**
-    - **Scope:** Specific to the current **invocation** (the entire process from an agent receiving user input to generating the final output for that input).
-    - **Persistence:** **Not Persistent.** Discarded after the invocation completes and does not carry over to the next one.
-    - **Use Cases:** Storing intermediate calculations, flags, or data passed between tool calls within a single invocation.
-    - **When Not to Use:** For information that must persist across different invocations, such as user preferences, conversation history summaries, or accumulated data.
-    - **Example:** `session.state['temp:raw_api_response'] = {...}`
+    - **Scope:** Specific to the *current* session (`id`).
+    - **Persistence:** Only persists if the `SessionService` is persistent (`Database`, `VertexAI`).
+    - **Example:** `session.state['current_intent'] = 'book_flight'`
+- **`user:` Prefix (User State):**
+    - **Scope:** Tied to the `user_id`, shared across *all* sessions for that user (within the same `app_name`).
+    - **Persistence:** Persistent with `Database` or `VertexAI`. (Stored by `InMemory` but lost on restart).
+    - **Example:** `session.state['user:preferred_language'] = 'fr'`
+- **`app:` Prefix (App State):**
+    - **Scope:** Tied to the `app_name`, shared across *all* users and sessions for that application.
+    - **Persistence:** Persistent with `Database` or `VertexAI`. (Stored by `InMemory` but lost on restart).
+    - **Example:** `session.state['app:global_discount_code'] = 'SAVE10'`
+- **`temp:` Prefix (Temporary Invocation State):**
+    - **Scope:** Specific to the current **invocation** (the entire process from an agent receiving user input to generating the final output for that input).
+    - **Persistence:** **Not Persistent.** Discarded after the invocation completes and does not carry over to the next one.
+    - **Use Cases:** Storing intermediate calculations, flags, or data passed between tool calls within a single invocation.
+    - **When Not to Use:** For information that must persist across different invocations, such as user preferences, conversation history summaries, or accumulated data.
+    - **Example:** `session.state['temp:raw_api_response'] = {...}`
 
 `output_key`(optional): Provide a string key. If set, the text content of the agent's final response will be automatically saved to the session's state dictionary under this key. This is useful for passing results between agents or steps in a workflow.
 
-Behind the scenes, the `Runner` uses the `output_key` to create the necessary `EventActions` with a `state_delta` and calls `append_event`.
+Behind the scenes, the `Runner` uses the `output_key` to create the necessary `EventActions` with a `state_delta` and calls `append_event`.
 
 #### Best Practices for State Design Recap[¶](https://google.github.io/adk-docs/sessions/state/#best-practices-for-state-design-recap)
 
-- **Minimalism:** Store only essential, dynamic data.
-- **Serialization:** Use basic, serializable types.
-- **Descriptive Keys & Prefixes:** Use clear names and appropriate prefixes (`user:`, `app:`, `temp:`, or none).
-- **Shallow Structures:** Avoid deep nesting where possible.
-- **Standard Update Flow:** Rely on `append_event`.
+- **Minimalism:** Store only essential, dynamic data.
+- **Serialization:** Use basic, serializable types.
+- **Descriptive Keys & Prefixes:** Use clear names and appropriate prefixes (`user:`, `app:`, `temp:`, or none).
+- **Shallow Structures:** Avoid deep nesting where possible.
+- **Standard Update Flow:** Rely on `append_event`.
 
 [T-DEVAGENTMEM-B-m2-l0-en-file-3.en.pdf](T-DEVAGENTMEM-B-m2-l0-en-file-3.en.pdf)
 
