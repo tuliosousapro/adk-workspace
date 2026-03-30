@@ -6,10 +6,6 @@
 
 #### Rating: ⭐⭐⭐⭐⭐
 
-### Notes
-
-## Read the PDF in Notion
-
 ### References
 
 - <https://google.github.io/adk-docs/>
@@ -36,8 +32,8 @@ Remember: Agent = model + tools + orchestration
 1. Edit agent.py – Define your agent’s behavior
 2. Run adk web – Test in the web interface
 3. Iterate – Make changes, refresh, and test again
-    1. adk run – Terminal-based interaction
-    2. adk api_server – Deploy as an API service
+   1. adk run – Terminal-based interaction
+   2. adk api_server – Deploy as an API service
 
 ## Recommended: create and activate a Python virtual environment
 
@@ -60,24 +56,24 @@ To exite `.venv`just type `deactivate`
 1. Model
 2. name
 3. Description
-    1. This description is primarily used by other LLM agents to determine if they should route a task to this agent. Make it specific enough to differentiate it from peers.
-    - Good descriptions:
+   1. This description is primarily used by other LLM agents to determine if they should route a task to this agent. Make it specific enough to differentiate it from peers.
+   - Good descriptions:
 
-        ✅ “Handles customer billing inquiries and processes payment updates”
-        ✅ “Analyzes sales data and generates weekly performance reports”
-        ✅ “Helps students learn algebra by guiding them through problem-solving steps”
-        ❌ “Billing agent” (too vague)
-        ❌ “Helper” (not specific enough)
+     ✅ “Handles customer billing inquiries and processes payment updates”
+     ✅ “Analyzes sales data and generates weekly performance reports”
+     ✅ “Helps students learn algebra by guiding them through problem-solving steps”
+     ❌ “Billing agent” (too vague)
+     ❌ “Helper” (not specific enough)
 
 4. Instruction (optional)
-    - Tips for effective instructions (from ADK docs):
-        1. Be clear and specific: avoid ambiguity, clearly
+   - Tips for effective instructions (from ADK docs):
+     1. Be clear and specific: avoid ambiguity, clearly
         state the desired actions and outcomes
-        2. Use markdown: Improve readability for complex
+     2. Use markdown: Improve readability for complex
         instructions using headings, lists, etc.
-        3. Provide examples (few-shot): For complex tasks
+     3. Provide examples (few-shot): For complex tasks
         or specific output formats, include examples
-        4. Guide tool use: don’t just list tools, explain when
+     4. Guide tool use: don’t just list tools, explain when
         and why the agent should use them
 
 Key rule: Always assign your main agent to a variable named `root_agent`, so ADK tools can find it.
@@ -118,9 +114,9 @@ Choose the right tool:
 
 1. Create the agent project
 
-    `adk create --type=config my_config_agent`
+   `adk create --type=config my_config_agent`
 
-    the `--type=config`flag tells the ADK this is a YAML based agent
+   the `--type=config`flag tells the ADK this is a YAML based agent
 
 Understanding YAML syntax:
 The vertical bar | after `instruction:` tells YAML everything that follows is multi-line text.
@@ -133,18 +129,18 @@ The vertical bar | after `instruction:` tells YAML everything that follows is mu
 # Environment Setup
 python3 -m venv adk-env      # Create virtual environment
 source adk-env/bin/activate  # Activate (macOS/Linux)
-adk-env\Scripts\activate     # Activate (Windows)         
-pip install google-adk       # Install ADK         
+adk-env\Scripts\activate     # Activate (Windows)
+pip install google-adk       # Install ADK
 
 # Create Agents
-adk create my_agent          # Create Python-based agent     
-adk create --type=config my_agent   # Create YAML-based agent 
+adk create my_agent          # Create Python-based agent
+adk create --type=config my_agent   # Create YAML-based agent
 
 # Run Agents
-adk web                     # Web interface (from agent dir) 
+adk web                     # Web interface (from agent dir)
 adk web my_agent            # Web interface (from parent dir)
-adk run                     # Terminal execution          
-adk api_server              
+adk run                     # Terminal execution
+adk api_server
 # REST API server
 ```
 
@@ -162,7 +158,7 @@ adk api_server
 - [Understand Google Cloud Agents](https://www.skills.google/course_templates/1504)
 - [Build your first agent with Agent Development Kit (ADK)](https://www.skills.google/course_templates/1563)
 - [Build intelligent agents with the Agent Development Kit
-(ADK)](https://www.skills.google/course_templates/1382)
+  (ADK)](https://www.skills.google/course_templates/1382)
 
 # [Optimize Agent Behavior](https://www.skills.google/paths/3545/course_templates/1564)
 
@@ -203,11 +199,11 @@ According to ADK documentation, use Pydantic BaseModel to define the exact struc
 
 ### Pydantic Base Model [Python](https://www.notion.so/Python-2ab6fd7ad8f5803dafb6c3466b472bcb?pvs=21)
 
-A **Pydantic**  is **a class used to define the structure and validation requirements of data in Python using type annotations**. It serves as a foundation for creating data models, ensuring that data conforms to specified types and constraints upon instantiation. [[1](https://docs.pydantic.dev/2.4/concepts/models/), [2](https://docs.pydantic.dev/2.8/concepts/models/), [3](https://docs.pydantic.dev/latest/concepts/models/), [4](https://docs.pydantic.dev/1.10/usage/models/)]
+A **Pydantic** is **a class used to define the structure and validation requirements of data in Python using type annotations**. It serves as a foundation for creating data models, ensuring that data conforms to specified types and constraints upon instantiation. [[1](https://docs.pydantic.dev/2.4/concepts/models/), [2](https://docs.pydantic.dev/2.8/concepts/models/), [3](https://docs.pydantic.dev/latest/concepts/models/), [4](https://docs.pydantic.dev/1.10/usage/models/)]
 
 **Core Functionality and Features**
 
-- **Data Validation and Parsing**: The primary function of a is to validate untrusted input data. When data is passed to a model, Pydantic automatically checks if it matches the field types defined in the class. If possible, it coerces data to the correct type (e.g., converting the string to the integer ); otherwise, it raises a .
+- **Data Validation and Parsing**: The primary function of a `BaseModel` is to validate untrusted input data. When data is passed to a model, Pydantic automatically checks if it matches the field types defined in the class. If possible, it coerces data to the correct type (e.g., converting the string to the integer ); otherwise, it raises a .
 - **Type Hint Integration**: It leverages Python's standard type hints, providing benefits like IDE auto-completion, linting, and static type checking with tools like .
 - **Serialization and Deserialization**: Pydantic models can easily be serialized into formats like JSON and deserialized from raw data (e.g., dictionaries).
 - **Schema Generation**: Models can automatically generate a JSON schema, which is useful for API documentation and integration with other tools. (This feature is heavily used by frameworks like FastAPI to generate interactive API docs).
@@ -216,11 +212,11 @@ A **Pydantic**  is **a class used to define the structure and validation require
 
 Basic Usage Example
 
-To use a , you import it from the  library and define a class that inherits from it, using type annotations for the fields. [[14](https://docs.pydantic.dev/latest/api/base_model/#:~:text=BaseModel.%20Pydantic%20models%20are%20simply%20classes%20which,BaseModel%20and%20define%20fields%20as%20annotated%20attributes.)]
+To use a `BaseModel`, you import it from the `pydantic` library and define a class that inherits from it, using type annotations for the fields. [[14](https://docs.pydantic.dev/latest/api/base_model/#:~:text=BaseModel.%20Pydantic%20models%20are%20simply%20classes%20which,BaseModel%20and%20define%20fields%20as%20annotated%20attributes.)]
 
 You can then create an instance of the model with data: [[15](https://medium.com/data-science/train-a-neural-network-to-detect-breast-mri-tumors-with-pytorch-250a02be7777#:~:text=From%20here%20we%20can%20simply%20create%20an%20instance%20of%20the%20dataset%20with:)]
 
-If the provided data is invalid and cannot be coerced, Pydantic raises a . [[2](https://docs.pydantic.dev/2.8/concepts/models/)]
+If the provided data is invalid and cannot be coerced, Pydantic raises a `ValidationError`. [[2](https://docs.pydantic.dev/2.8/concepts/models/)]
 
 [T-DEVAGENTOPT-I-m3-l0-en-file-5.en.pdf](T-DEVAGENTOPT-I-m3-l0-en-file-5.en.pdf)
 
@@ -228,7 +224,7 @@ If the provided data is invalid and cannot be coerced, Pydantic raises a . [[2](
 
 ### Problem: Wrong temperature for task
 
-No temperature configured - defaults to 1.0 (high creativity/randomness) *For factual tasks, we want temperature near 0!*
+No temperature configured - defaults to 1.0 (high creativity/randomness) _For factual tasks, we want temperature near 0!_
 
 - Low temperature (0.0 - 0.3) - Deterministic
   - Use for: Facts, data extraction, analysis, consistency
@@ -240,15 +236,15 @@ No temperature configured - defaults to 1.0 (high creativity/randomness) *For fa
 Safety thresholds:
 
 - `BLOCK_NONE`No filtering (not recommended
-for production)
+  for production)
 - `BLOCK_ONLY_HIGH` Block only high-probability
-harmful content
+  harmful content
   - Research internal tools
 - `BLOCK_ONLY_MEDIUM_AND_ABOVE`Block medium
-and high probability
+  and high probability
   - Business, general use
 - `BLOCK_ONLY_LOW_AND_ABOVE`Most strict, blocks
-even low probability
+  even low probability
   - Children, public-facing
 
 ### Parameters explained
@@ -275,20 +271,20 @@ The `thinkingLevel` parameter, recommended for Gemini 3 models and newer, allows
 
 The following table details the `thinkingLevel` settings for each model type:
 
-| **Thinking level** | **Gemini 3.1 Pro** | **Gemini 3.1 Flash-Lite** | **Gemini 3 Flash** | **Description** |
-| --- | --- | --- | --- | --- |
-| **`minimal`** | **incompatible** | **Supported** (default) | **Supported** | Corresponds to the 'no thinking' setting for most queries. The model may think very minimally for complex programming tasks. Minimizes latency for chat or high-throughput applications. **`minimal`** does not guarantee that thinking is disabled. |
-| **`low`** | **Supported** | **Supported** | **Supported** | Minimizes latency and cost. Ideal for following simple instructions, chatting, or high-throughput applications. |
-| **`medium`** | **Supported** | **Supported** | **Supported** | Balanced thinking for most tasks. |
-| **`high`** | **Supported** (padrão, dinâmico) | **Supported** (dinâmico) | **Supported** (padrão, dinâmico) | Maximizes reasoning depth. The model may take much longer to generate the first output token (without thinking), but the output will be better reasoned. |
+| **Thinking level** | **Gemini 3.1 Pro**               | **Gemini 3.1 Flash-Lite** | **Gemini 3 Flash**               | **Description**                                                                                                                                                                                                                                      |
+| ------------------ | -------------------------------- | ------------------------- | -------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **`minimal`**      | **incompatible**                 | **Supported** (default)   | **Supported**                    | Corresponds to the 'no thinking' setting for most queries. The model may think very minimally for complex programming tasks. Minimizes latency for chat or high-throughput applications. **`minimal`** does not guarantee that thinking is disabled. |
+| **`low`**          | **Supported**                    | **Supported**             | **Supported**                    | Minimizes latency and cost. Ideal for following simple instructions, chatting, or high-throughput applications.                                                                                                                                      |
+| **`medium`**       | **Supported**                    | **Supported**             | **Supported**                    | Balanced thinking for most tasks.                                                                                                                                                                                                                    |
+| **`high`**         | **Supported** (padrão, dinâmico) | **Supported** (dinâmico)  | **Supported** (padrão, dinâmico) | Maximizes reasoning depth. The model may take much longer to generate the first output token (without thinking), but the output will be better reasoned.                                                                                             |
 
 The following example shows how to set the thinking level.
 
 [Python](https://ai.google.dev/gemini-api/docs/thinking?hl=pt-br#python)[JavaScript](https://ai.google.dev/gemini-api/docs/thinking?hl=pt-br#javascript)[Go](https://ai.google.dev/gemini-api/docs/thinking?hl=pt-br#go)[REST](https://ai.google.dev/gemini-api/docs/thinking?hl=pt-br#rest)
 
 ```
-fromgoogleimport genai
-fromgoogle.genaiimport types
+from google import genai
+from google.genai import types
 
 client = genai.Client()
 
@@ -355,7 +351,7 @@ Reasoning → Selection → Invocation → Observation → finalization
 
 ```mermaid
 graph LR
-A[Built-in Tools] --> B[Google 
+A[Built-in Tools] --> B[Google
 Search]
 A --> C[Code Execution]
 A --> D[Vertex AI Search]
@@ -382,7 +378,7 @@ style H fill:#f0f0f0
 ### IMPORTANT: Search suggestions policy
 
 > If your response includes search suggestions (in `renderedContent`), you MUST display them in your application UI. This is a mandatory policy requirement.
->
+
 - When using Google Search grounding you need to display search suggestions (`renderedContent`) in your application UI.
 - Only one built-in tool can be used per root agent, with no other tools allowed in the same agent
 - Built-in tools are production-ready, maintained by ADK, and optimized for LLM interaction
@@ -453,55 +449,56 @@ Note over Agent,Tool: LLM decides WHEN to call<br/>Tool executes WHAT to do
 #### 1. Function signatures matter
 
 1. Function name (Descriptive) - The LLM uses the function name to understand what the tool does.
-    1. Use verb-noun pattern (get_, calculate_, search_*)
+   1. Use verb-noun pattern (get*, calculate*, search\_\*)
 
-    ```python
-    #  Good: Descriptive, verb-noun pattern
-    def get_shipping_cost(weight: float, destination: str) -> dict:
-    """Retrieves shipping cost for a package."""
-    pass
-    
-    #  Bad: Generic, unclear names
-    def process(data: float) -> dict:  # Process what?
-    pass
-    ```
+   ```python
+   #  Good: Descriptive, verb-noun pattern
+   def get_shipping_cost(weight: float, destination: str) -> dict:
+       """Retrieves shipping cost for a package."""
+       pass
+
+   #  Bad: Generic, unclear names
+   def process(data: float) -> dict:  # Process what?
+       pass
+   ```
 
 2. Type Hints (Required) - Type hints tell ADK what types the LLM should provide
-    1. ADK uses these to generate schema for the LLM
+   1. ADK uses these to generate schema for the LLM
 
 ```python
 #  Good: Type hints for all parameters and return
 def lookup_order(order_id: str, user_id: int) -> dict:
-"""Looks up order information."""
-pass
+    """Looks up order information."""
+    pass
 
 #  Bad: No type hints - LLM won't know what types to provide
 def lookup_order(order_id, user_id):  # What types are these?
-pass
+    pass
 ```
 
 1. Parameter types - Use JSON-serializable types that LLMs understand:
-☺Supported: str, int, float, bool, list, dict
-‼Avoid: Complex custom classes, objects, file handles
+
+- ✅ Supported: str, int, float, bool, list, dict
+- ❌ Avoid: Complex custom classes, objects, file handles
 
 ```python
 #  Good: Simple, JSON-serializable types
 def book_flight(
-destination: str,
-departure_date: str,
-passengers: int
+    destination: str,
+    departure_date: str,
+    passengers: int
 ) -> dict:
-pass
+    pass
 
 #  Bad: Complex custom types
 from datetime import datetime
 from custom_models import Customer
 def book_flight(
-destination: str,
-departure_date: datetime,  # Not JSON-serializable
-customer: Customer  # Custom class
+    destination: str,
+    departure_date: datetime,  # Not JSON-serializable
+    customer: Customer  # Custom class
 ) -> dict:
-pass
+    pass
 ```
 
 1. Do not set default values for parameters - Default values are not reliably supported or used by the underlying models.
@@ -509,17 +506,17 @@ pass
 ```python
 #  Recommended: All parameters required
 def book_flight(destination: str, date: str, passengers: int) -> dict:
-"""Books a flight."""
-pass
+    """Books a flight."""
+    pass
 
 #    Not recommended: Default values may not work reliably
 def search_flights(
-destination: str,
-max_price: float = 1000.0,  # Default may be ignored
-class_type: str = "economy"  # Default may be ignored
+    destination: str,
+    max_price: float = 1000.0,  # Default may be ignored
+    class_type: str = "economy"  # Default may be ignored
 ) -> dict:
-"""Searches for flights."""
-pass
+    """Searches for flights."""
+    pass
 ```
 
 #### 2. Docstrings are critical
@@ -530,18 +527,18 @@ Explain what the tool does, when to use it, args, and returns.
 
 ```python
 def tool_name(param1: type1, param2: type2) -> dict:
-"""[One-line summary of what this tool does]
-[Optional: Additional context about when to use this tool]
-Args:
-param1 (type1): [Description of param1]
-param2 (type2): [Description of param2]
-Returns:
-dict: [Description of return structure]
-On success: {'status': 'success', 'key': value}
-On error: {'status': 'error', 'error_message': 'explanation'}
-"""
-# Implementation
-pass
+    """[One-line summary of what this tool does]
+    [Optional: Additional context about when to use this tool]
+    Args:
+    param1 (type1): [Description of param1]
+    param2 (type2): [Description of param2]
+    Returns:
+    dict: [Description of return structure]
+    On success: {'status': 'success', 'key': value}
+    On error: {'status': 'error', 'error_message': 'explanation'}
+    """
+    # Implementation
+    pass
 ```
 
 ```mermaid
@@ -573,39 +570,39 @@ Always include status key for LLM comprehension
 
 ```python
 # Success case
-return {
-"status": "success",
-"data_key": value,
-"another_key": another_value
-}
+    return {
+        "status": "success",
+        "data_key": value,
+        "another_key": another_value
+    }
 
 # Error case
-return {
-"status": "error",
-"error_message": "Human-readable explanation of what went wrong"
-}
+    return {
+        "status": "error",
+        "error_message": "Human-readable explanation of what went wrong"
+    }
 ```
 
 ### Best Practice Pattern
 
 ```python
 def tool_name(param: type) -> dict:
-"""Clear one-line summary.
-Additional context about when to use this tool.
+    """Clear one-line summary.
+    Additional context about when to use this tool.
 
-Args:
-param (type): Description of parameter.
+    Args:
+    param (type): Description of parameter.
 
-Returns:
-dict: Description of return.
-On success: {'status': 'success', 'data': value}
-On error: {'status': 'error', 'error_message': 'explanatiom'}
-"""
-# Validate input
-if error_condition:
-return {"status": "error", "error_message": "Clear explanation"}
-# Perform operation
-return {"status": "success", "result_key": computed_value}
+    Returns:
+    dict: Description of return.
+    On success: {'status': 'success', 'data': value}
+    On error: {'status': 'error', 'error_message': 'explanatiom'}
+    """
+    # Validate input
+    if error_condition:
+        return {"status": "error", "error_message": "Clear explanation"}
+    # Perform operation
+    return {"status": "success", "result_key": computed_value}
 ```
 
 #### Multiple Tools
@@ -649,8 +646,7 @@ style L fill:#ffe6cc
 ```
 
 > **Key principle:** Different error types require different handling strategies.
-Specify exactly what the agent should do for each case.
->
+> Specify exactly what the agent should do for each case.
 
 ```mermaid
 flowchart TD
@@ -688,11 +684,11 @@ Instead of writing a function tool, you can use another specialized agent as a t
 - Different instructions needed for the subtask
 - Complex workflows within the subtask
 
-| Aspect | Function tool | Agent-as-tool |
-| --- | --- | --- |
-| Implements | Predefined logic | Reasoning and decision-making |
-| Best for | Calculations, lookups, API calls | Complex subtasks requiring judgment |
-| Example | `calculate_shipping()` | Technical support specialist |
+| Aspect     | Function tool                    | Agent-as-tool                       |
+| ---------- | -------------------------------- | ----------------------------------- |
+| Implements | Predefined logic                 | Reasoning and decision-making       |
+| Best for   | Calculations, lookups, API calls | Complex subtasks requiring judgment |
+| Example    | `calculate_shipping()`           | Technical support specialist        |
 
 ### Strategic Instructions
 
@@ -722,47 +718,47 @@ instruction="""
 
 #### Tool Design
 
-- [ ]  Descriptive function names (verb–noun pattern)
-- [ ]  Type hints on all parameters
-- [ ]  Comprehensive docstrings (what, when, args, returns)
-- [ ]  Return dictionaries with `status` key
-- [ ]  Specific, user-friendly error messages
-- [ ]  Single, focused purpose per tool
-- [ ]  JSON-serializable parameter types
+- [ ] Descriptive function names (verb–noun pattern)
+- [ ] Type hints on all parameters
+- [ ] Comprehensive docstrings (what, when, args, returns)
+- [ ] Return dictionaries with `status` key
+- [ ] Specific, user-friendly error messages
+- [ ] Single, focused purpose per tool
+- [ ] JSON-serializable parameter types
 
 #### Instruction Design
 
-- [ ]  Reference tools by name
-- [ ]  Specify when to use each tool
-- [ ]  Define sequential workflows step-by-step
-- [ ]  Handle all error types with specific actions
-- [ ]  Include escalation paths
-- [ ]  Organize into clear sections
+- [ ] Reference tools by name
+- [ ] Specify when to use each tool
+- [ ] Define sequential workflows step-by-step
+- [ ] Handle all error types with specific actions
+- [ ] Include escalation paths
+- [ ] Organize into clear sections
 
 #### Built-in Tools
 
-- [ ]  Use Google Search for real-time information
-- [ ]  Use Code Execution for precise calculations
-- [ ]  Display search suggestions (policy requirement)
-- [ ]  Remember one built-in tool per agent limitation
-- [ ]  Use Gemini 2.0+ models
+- [ ] Use Google Search for real-time information
+- [ ] Use Code Execution for precise calculations
+- [ ] Display search suggestions (policy requirement)
+- [ ] Remember one built-in tool per agent limitation
+- [ ] Use Gemini 2.0+ models
 
 #### Error Handling
 
-- [ ]  Return specific error types
-- [ ]  Provide human-readable error messages
-- [ ]  Specify retry vs. give up strategies
-- [ ]  Define escalation criteria
-- [ ]  Test all error paths
-- [ ]  Document expected errors in docstrings
+- [ ] Return specific error types
+- [ ] Provide human-readable error messages
+- [ ] Specify retry vs. give up strategies
+- [ ] Define escalation criteria
+- [ ] Test all error paths
+- [ ] Document expected errors in docstrings
 
 #### MCP Tools
 
-- [ ]  Check MCP Registry before writing custom tools
-- [ ]  Use `tool_filter` to limit exposed tools
-- [ ]  Use `StdioConnectionParams` for development
-- [ ]  Use `SseConnectionParams` for production
-- [ ]  Ensure Node.js is installed for npx-based servers
+- [ ] Check MCP Registry before writing custom tools
+- [ ] Use `tool_filter` to limit exposed tools
+- [ ] Use `StdioConnectionParams` for development
+- [ ] Use `SseConnectionParams` for production
+- [ ] Ensure Node.js is installed for npx-based servers
 
 ---
 
@@ -781,7 +777,7 @@ Conceptually, `session.state` is a collection (dictionary or map) holding key-va
 ```mermaid
 graph TB
 subgraph "Conversation History"
-CH1[Text messages<br/>User and 
+CH1[Text messages<br/>User and
 Agent]
 CH2[LLM reads   ]
 CH3[Your code CANNOT access   ]
@@ -802,31 +798,31 @@ style SS3 fill:#eeffee
 #### Key Characteristics of `State`[¶](https://google.github.io/adk-docs/sessions/state/#key-characteristics-of-state)
 
 1. **Structure: Serializable Key-Value Pairs**
-    - Data is stored as `key: value`.
-    - **Keys:** Always strings (`str`). Use clear names (e.g., `'departure_city'`, `'user:language_preference'`).
-    - **Values:** Must be **serializable**. This means they can be easily saved and loaded by the `SessionService`. Stick to basic types in the specific languages (Python/Go/Java/TypeScript) like strings, numbers, booleans, and simple lists or dictionaries containing *only* these basic types. (See API documentation for precise details).
-    - **⚠️ Avoid Complex Objects:** **Do not store non-serializable objects** (custom class instances, functions, connections, etc.) directly in the state. Store simple identifiers if needed, and retrieve the complex object elsewhere.
+   - Data is stored as `key: value`.
+   - **Keys:** Always strings (`str`). Use clear names (e.g., `'departure_city'`, `'user:language_preference'`).
+   - **Values:** Must be **serializable**. This means they can be easily saved and loaded by the `SessionService`. Stick to basic types in the specific languages (Python/Go/Java/TypeScript) like strings, numbers, booleans, and simple lists or dictionaries containing _only_ these basic types. (See API documentation for precise details).
+   - **⚠️ Avoid Complex Objects:** **Do not store non-serializable objects** (custom class instances, functions, connections, etc.) directly in the state. Store simple identifiers if needed, and retrieve the complex object elsewhere.
 2. **Mutability: It Changes**
-    - The contents of the `state` are expected to change as the conversation evolves.
+   - The contents of the `state` are expected to change as the conversation evolves.
 3. **Persistence: Depends on `SessionService`**
-    - Whether state survives application restarts depends on your chosen service:
-    - `InMemorySessionService`: **Not Persistent.** State is lost on restart.
-    - `DatabaseSessionService` / `VertexAiSessionService`: **Persistent.** State is saved reliably.
+   - Whether state survives application restarts depends on your chosen service:
+   - `InMemorySessionService`: **Not Persistent.** State is lost on restart.
+   - `DatabaseSessionService` / `VertexAiSessionService`: **Persistent.** State is saved reliably.
 
 #### Organizing State with Prefixes: Scope Matters[¶](https://google.github.io/adk-docs/sessions/state/#organizing-state-with-prefixes-scope-matters)
 
 Prefixes on state keys define their scope and persistence behavior, especially with persistent services:
 
 - **No Prefix (Session State):**
-  - **Scope:** Specific to the *current* session (`id`).
+  - **Scope:** Specific to the _current_ session (`id`).
   - **Persistence:** Only persists if the `SessionService` is persistent (`Database`, `VertexAI`).
   - **Example:** `session.state['current_intent'] = 'book_flight'`
 - **`user:` Prefix (User State):**
-  - **Scope:** Tied to the `user_id`, shared across *all* sessions for that user (within the same `app_name`).
+  - **Scope:** Tied to the `user_id`, shared across _all_ sessions for that user (within the same `app_name`).
   - **Persistence:** Persistent with `Database` or `VertexAI`. (Stored by `InMemory` but lost on restart).
   - **Example:** `session.state['user:preferred_language'] = 'fr'`
 - **`app:` Prefix (App State):**
-  - **Scope:** Tied to the `app_name`, shared across *all* users and sessions for that application.
+  - **Scope:** Tied to the `app_name`, shared across _all_ users and sessions for that application.
   - **Persistence:** Persistent with `Database` or `VertexAI`. (Stored by `InMemory` but lost on restart).
   - **Example:** `session.state['app:global_discount_code'] = 'SAVE10'`
 - **`temp:` Prefix (Temporary Invocation State):**
