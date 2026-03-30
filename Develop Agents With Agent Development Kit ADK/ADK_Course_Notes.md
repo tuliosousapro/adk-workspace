@@ -43,11 +43,13 @@ Create a Python virtual environment:
 
 Activate the Python virtual environment:
 
-[Windows CMD](https://google.github.io/adk-docs/get-started/python/#windows-cmd)[Windows Powershell](https://google.github.io/adk-docs/get-started/python/#windows-powershell)[MacOS / Linux](https://google.github.io/adk-docs/get-started/python/#macos--linux)
+- [Windows CMD](https://google.github.io/adk-docs/get-started/python/#windows-cmd)
+- [Windows Powershell](https://google.github.io/adk-docs/get-started/python/#windows-powershell)
+- [MacOS / Linux](https://google.github.io/adk-docs/get-started/python/#macos--linux)
 
 `.venv\Scripts\activate.bat`
 
-To exite `.venv`just type `deactivate`
+To exit `.venv` just type `deactivate`
 
 [T-DEVAGENT-I-m2-l0-en-file-2.en.pdf](T-DEVAGENT-I-m2-l0-en-file-2.en.pdf)
 
@@ -59,11 +61,11 @@ To exite `.venv`just type `deactivate`
    1. This description is primarily used by other LLM agents to determine if they should route a task to this agent. Make it specific enough to differentiate it from peers.
    - Good descriptions:
 
-     ✅ “Handles customer billing inquiries and processes payment updates”
-     ✅ “Analyzes sales data and generates weekly performance reports”
-     ✅ “Helps students learn algebra by guiding them through problem-solving steps”
-     ❌ “Billing agent” (too vague)
-     ❌ “Helper” (not specific enough)
+     - ✅ “Handles customer billing inquiries and processes payment updates”
+     - ✅ “Analyzes sales data and generates weekly performance reports”
+     - ✅ “Helps students learn algebra by guiding them through problem-solving steps”
+     - ❌ “Billing agent” (too vague)
+     - ❌ “Helper” (not specific enough)
 
 4. Instruction (optional)
    - Tips for effective instructions (from ADK docs):
@@ -140,8 +142,7 @@ adk create --type=config my_agent   # Create YAML-based agent
 adk web                     # Web interface (from agent dir)
 adk web my_agent            # Web interface (from parent dir)
 adk run                     # Terminal execution
-adk api_server
-# REST API server
+adk api_server              # REST API server
 ```
 
 # [Engineer AI Agents with Agent Development Kit (ADK)](https://www.skills.google/paths/3545/course_templates/1596)
@@ -157,8 +158,7 @@ adk api_server
 
 - [Understand Google Cloud Agents](https://www.skills.google/course_templates/1504)
 - [Build your first agent with Agent Development Kit (ADK)](https://www.skills.google/course_templates/1563)
-- [Build intelligent agents with the Agent Development Kit
-  (ADK)](https://www.skills.google/course_templates/1382)
+- [Build intelligent agents with the Agent Development Kit (ADK)](https://www.skills.google/course_templates/1382)
 
 # [Optimize Agent Behavior](https://www.skills.google/paths/3545/course_templates/1564)
 
@@ -203,8 +203,8 @@ A **Pydantic** is **a class used to define the structure and validation requirem
 
 **Core Functionality and Features**
 
-- **Data Validation and Parsing**: The primary function of a `BaseModel` is to validate untrusted input data. When data is passed to a model, Pydantic automatically checks if it matches the field types defined in the class. If possible, it coerces data to the correct type (e.g., converting the string to the integer ); otherwise, it raises a .
-- **Type Hint Integration**: It leverages Python's standard type hints, providing benefits like IDE auto-completion, linting, and static type checking with tools like .
+- **Data Validation and Parsing**: The primary function of a `BaseModel` is to validate untrusted input data. When data is passed to a model, Pydantic automatically checks if it matches the field types defined in the class. If possible, it coerces data to the correct type (e.g., converting a string to an integer); otherwise, it raises a `ValidationError`.
+- **Type Hint Integration**: It leverages Python's standard type hints, providing benefits like IDE auto-completion, linting, and static type checking with tools like `mypy`.
 - **Serialization and Deserialization**: Pydantic models can easily be serialized into formats like JSON and deserialized from raw data (e.g., dictionaries).
 - **Schema Generation**: Models can automatically generate a JSON schema, which is useful for API documentation and integration with other tools. (This feature is heavily used by frameworks like FastAPI to generate interactive API docs).
 - **Customization**: Developers can add custom validation logic using field and model validators or define custom data types to meet specific requirements.
@@ -307,9 +307,8 @@ The `thinking_budget`parameter guides the model on the number of thinking tokens
 
 Parameters explained:
 
-`include_thoughts`If true, the response includes the agent's internal reasoning process | When True, you see the model's internal reasoning process in the response. Essential for debugging and understanding how the agent arrived at its answer.
-
-`thinking_budget` : Number of tokens the model can use for thinking (not included in final response) | Controls how deeply the model can reason. Higher values (e.g., 2048) allow more thorough analysis for complex problems. Lower values (e.g., 512) are faster for simpler tasks.
+- `include_thoughts`: If true, the response includes the agent's internal reasoning process. When True, you see the model's internal reasoning process in the response. Essential for debugging and understanding how the agent arrived at its answer.
+- `thinking_budget`: Controls the number of tokens the model can use for thinking (not included in final response). Controls how deeply the model can reason. Higher values (e.g., 2048) allow more thorough analysis for complex problems. Lower values (e.g., 512) are faster for simpler tasks.
 
 #### Which planner should you use?
 
@@ -449,7 +448,7 @@ Note over Agent,Tool: LLM decides WHEN to call<br/>Tool executes WHAT to do
 #### 1. Function signatures matter
 
 1. Function name (Descriptive) - The LLM uses the function name to understand what the tool does.
-   1. Use verb-noun pattern (get*, calculate*, search\_\*)
+   1. Use verb-noun pattern (`get*`, `calculate*`, `search_*`)
 
    ```python
    #  Good: Descriptive, verb-noun pattern
@@ -596,7 +595,7 @@ def tool_name(param: type) -> dict:
     Returns:
     dict: Description of return.
     On success: {'status': 'success', 'data': value}
-    On error: {'status': 'error', 'error_message': 'explanatiom'}
+    On error: {'status': 'error', 'error_message': 'explanation'}
     """
     # Validate input
     if error_condition:
